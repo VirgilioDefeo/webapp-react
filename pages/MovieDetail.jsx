@@ -18,8 +18,18 @@ const MovieDetail = () => {
     return (
         <div className="container mt-4">
             <h2>{movie.title}</h2>
+            {movie.poster && <img src={movie.poster} alt={movie.title} className="img-fluid" />}
             <p>Anno:{movie.year}</p>
-            {movie.poster && <img src={movie.poster} alt={movie.title} style={{maxWidth: "300px"}}></img>}
+                <h3>Recensioni</h3>
+           {movie.reviews && (
+  <ul>
+    {movie.reviews.map((r, i) => (
+      <li key={i}>{r.comment}</li>
+    ))}
+  </ul>
+)}
+
+            
         </div>
     )
 }

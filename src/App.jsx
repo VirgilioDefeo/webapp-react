@@ -4,6 +4,7 @@ import MovieDetail from "../pages/MovieDetail";
 
 function App() {
   return (
+    
      <div>
       <nav className="navbar navbar-expand navbar-dark bg-dark px-3">
         <Link className="navbar-brand " to="/">MovieApp</Link>
