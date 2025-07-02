@@ -16,21 +16,28 @@ const MovieDetail = () => {
     if(!movie) return <p>caricamento..</p>
 
     return (
-        <div className="container mt-4">
-            <h2>{movie.title}</h2>
-            {movie.poster && <img src={movie.poster} alt={movie.title} className="img-fluid" />}
-            <p>Anno:{movie.year}</p>
-                <h3>Recensioni</h3>
-           {movie.reviews && (
-  <ul>
-    {movie.reviews.map((r, i) => (
-      <li key={i}>{r.comment}</li>
-    ))}
-  </ul>
-)}
+         <div className="container mt-4">
+      <h2>{movie.title}</h2>
+      {movie.poster && (
+        <img
+          src={movie.poster}
+          alt={movie.title}
+          className="img-fluid mb-3"
+        />
+      )}
+      <p><strong>Anno:</strong> {movie.year}</p>
 
-            
-        </div>
+      <h4>Recensioni:</h4>
+      {movie.reviews && movie.reviews.length > 0 ? (
+        <ul>
+          {movie.reviews.map((review, index) => (
+            <li key={index}><strong>{review.name}</strong> ({review.vote}/5): {review.text}</li>
+          ))}
+        </ul>
+      ) : (
+        <p>Nessuna recensione.</p>
+      )}
+    </div>
     )
 }
 
