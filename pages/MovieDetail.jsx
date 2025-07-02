@@ -4,14 +4,14 @@ import { useParams } from "react-router-dom"
 
 
 const MovieDetail = () => {
-    const {id} = useParams()
+    const {slug} = useParams()
     const [movie, setMovie] = useState(null)
 
     useEffect(() => {
-        axios.get(`http://localhost:3000/movies/${id}`)
+        axios.get(`http://localhost:3000/movies/${slug}`)
         .then(res => setMovie(res.data))
         .catch(err => console.error((err)))
-    }, [id])
+    }, [slug])
 
     if(!movie) return <p>caricamento..</p>
 

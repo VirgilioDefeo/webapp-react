@@ -1,6 +1,7 @@
 import { Routes, Route,  Link} from "react-router-dom";import Home from "../pages/Home"
 import Movies from "../pages/Movies"
 import MovieDetail from "../pages/MovieDetail";
+import NotFound from "../pages/NotFound"
 
 function App() {
   return (
@@ -15,7 +16,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/movies" element={<Movies />} />
-                <Route path="/movies/:id" element={<MovieDetail />} />
+                <Route path="/movies/:slug" element={<MovieDetail />} />
+                <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   )

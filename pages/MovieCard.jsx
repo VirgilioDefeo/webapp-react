@@ -12,7 +12,7 @@ function MovieCard({ movie }) {
       <div className="card-body">
         <h5 className="card-title">{movie.title}</h5>
         <p className="card-text">Anno: {movie.year}</p>
-        <Link to={`/movies/${movie.id}`} className="btn btn-primary">Dettagli</Link>
+        <Link to={`/movies/${movie.slug}`} className="btn btn-primary">Dettagli</Link>
       </div>
     </div>
   );
